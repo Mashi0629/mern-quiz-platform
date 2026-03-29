@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 });
 
 const quizRoutes = require("./routes/quizRoutes");
-app.use("/api/quizzes", quizRoutes);
+app.use("/api/quizzes", quizRoutes); 
 
 const PORT = process.env.PORT || 5000;
 
