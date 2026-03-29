@@ -19,6 +19,9 @@ app.get("/", (req, res) => {
   res.send("Quiz API Running 🚀");
 });
 
+const quizRoutes = require("./routes/quizRoutes");
+app.use("/api/quizzes", quizRoutes);
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
