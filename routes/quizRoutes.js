@@ -38,5 +38,29 @@ router.get("/", async (req, res) => {
   res.json(quizzes);
 });
 
+//  SUBMIT QUIZ & CALCULATE SCORE
+router.post("/:id/submit", protect, async (req, res) => {
+  try {
+    const quiz = await Quiz.findById(req.params.id);
+
+    const { answers } = req.body;
+
+    let score = 0;
+
+    quiz.questions.forEach((q, index) => {
+      if (q.correctAnswer === answers[index]) {
+        score++;
+      }
+    });
+
+    res.json({
+      totalQuestions: quiz.questions.length,
+      score,
+    });
+
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
 module.exports = router;
