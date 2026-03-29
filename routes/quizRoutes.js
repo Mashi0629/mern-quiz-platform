@@ -43,12 +43,20 @@ router.post("/:id/submit", protect, async (req, res) => {
   try {
     const quiz = await Quiz.findById(req.params.id);
 
+    if (!quiz) {
+      return res.status(404).json({ message: "Quiz not found" });
+    }
+
     const { answers } = req.body;
+
+    if (!answers || !Array.isArray(answers)) {
+      return res.status(400).json({ message: "Answers must be an array" });
+    }
 
     let score = 0;
 
     quiz.questions.forEach((q, index) => {
-      if (q.correctAnswer === answers[index]) {
+      if (answers[index] !== undefined && q.correctAnswer === answers[index]) {
         score++;
       }
     });
