@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Quiz = require("../models/Quiz");
+const Result = require("../models/Result");
 const jwt = require("jsonwebtoken");
 
 //  middleware (copy from userRoutes)
@@ -49,10 +50,6 @@ router.post("/:id/submit", protect, async (req, res) => {
 
     const { answers } = req.body;
 
-    if (!answers || !Array.isArray(answers)) {
-      return res.status(400).json({ message: "Answers must be an array" });
-    }
-
     let score = 0;
 
     quiz.questions.forEach((q, index) => {
@@ -61,9 +58,19 @@ router.post("/:id/submit", protect, async (req, res) => {
       }
     });
 
-    res.json({
-      totalQuestions: quiz.questions.length,
+    // SAVE RESULT
+    const result = await Result.create({
+      user: req.user.id,
+      quiz: quiz._id,
       score,
+      totalQuestions: quiz.questions.length,
+    });
+
+    res.json({
+      message: "Quiz submitted",
+      score,
+      totalQuestions: quiz.questions.length,
+      result,
     });
 
   } catch (error) {
