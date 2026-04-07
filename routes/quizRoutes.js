@@ -78,4 +78,18 @@ router.post("/:id/submit", protect, async (req, res) => {
   }
 });
 
+//  LEADERBOARD
+router.get("/leaderboard", async (req, res) => {
+  try {
+    const leaderboard = await Result.find()
+      .populate("user", "name email")
+      .sort({ score: -1 });
+
+    res.json(leaderboard);
+
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 module.exports = router;
