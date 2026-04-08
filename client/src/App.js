@@ -1,10 +1,11 @@
 import React from "react";
+import Register from "./pages/Register";
 
 function App() {
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
+    <div>
       <h1>Quiz App 🚀</h1>
-      <p>Frontend starting...</p>
+      <Register />
     </div>
   );
 }
