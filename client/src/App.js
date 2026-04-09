@@ -2,6 +2,7 @@ import React from "react";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import QuizList from "./pages/QuizList";
+import Leaderboard from "./pages/Leaderboard";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <Login />
       <hr />
       <QuizList />
+      <hr />
+      <Leaderboard />
     </div>
   );
 }
