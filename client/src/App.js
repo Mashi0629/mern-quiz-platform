@@ -8,6 +8,7 @@ function App() {
   return (
     <div>
       <h1>Quiz App 🚀</h1>
+      <h1 className="text-5xl text-blue-600">Tailwind Working 🚀</h1>
 
       <Register />
       <hr />
