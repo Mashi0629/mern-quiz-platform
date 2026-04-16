@@ -6,17 +6,19 @@ import Leaderboard from "./pages/Leaderboard";
 
 function App() {
   return (
-    <div>
-      <h1>Quiz App 🚀</h1>
-      <h1 className="text-5xl text-blue-600">Tailwind Working 🚀</h1>
+    <div className="min-h-screen bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-600 flex flex-col items-center p-6">
+      
+      <h1 className="text-4xl font-bold text-white mb-6">
+        Quiz App 🚀
+      </h1>
 
-      <Register />
-      <hr />
-      <Login />
-      <hr />
-      <QuizList />
-      <hr />
-      <Leaderboard />
+      <div className="w-full max-w-xl space-y-6">
+        <Register />
+        <Login />
+        <QuizList />
+        <Leaderboard />
+      </div>
+
     </div>
   );
 }
