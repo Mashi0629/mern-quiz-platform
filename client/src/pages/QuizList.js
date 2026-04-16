@@ -27,7 +27,9 @@ function QuizList() {
       {quizzes.map((quiz) => (
         <div key={quiz._id} className="bg-white/10 p-4 rounded-lg mb-3">
           <h3 className="text-lg font-semibold text-white">{quiz.title}</h3>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" onClick={() => setSelectedQuizId(quiz._id)}>
+          <button className="mt-3 px-4 py-2 rounded-lg text-white 
+bg-gradient-to-r from-green-400 to-blue-500 
+hover:scale-105 transition duration-300 shadow-md" onClick={() => setSelectedQuizId(quiz._id)}>
             Attempt Quiz
           </button>
         </div>

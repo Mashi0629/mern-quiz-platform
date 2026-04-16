@@ -58,7 +58,9 @@ function QuizPage({ quizId }) {
         </div>
       ))}
 
-      <button onClick={handleSubmit}>Submit Quiz</button>
+      <button className="mt-4 px-6 py-2 rounded-lg text-white font-bold 
+bg-gradient-to-r from-purple-600 to-indigo-600 
+hover:scale-110 transition duration-300 shadow-lg" onClick={handleSubmit}>Submit Quiz</button>
     </div>
   );
 }

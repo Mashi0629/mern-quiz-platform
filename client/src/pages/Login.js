@@ -40,7 +40,10 @@ function Login() {
         onChange={(e) => setForm({ ...form, password: e.target.value })}
       />
 
-      <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" onClick={handleLogin}>
+      <button   className="w-full py-2 rounded-lg text-white font-semibold 
+  bg-gradient-to-r from-pink-500 to-purple-500 
+  hover:from-purple-500 hover:to-pink-500 
+  transition duration-300 shadow-lg hover:shadow-pink-500/50" onClick={handleLogin}>
         Login
       </button>
     </div>

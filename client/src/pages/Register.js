@@ -24,7 +24,10 @@ function Register() {
       <input className="w-full p-2 mb-2 rounded bg-white/80" placeholder="Email" onChange={(e) => setForm({ ...form, email: e.target.value })} />
       <input className="w-full p-2 mb-2 rounded bg-white/80" placeholder="Password" type="password" onChange={(e) => setForm({ ...form, password: e.target.value })} />
 
-      <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" onClick={handleSubmit}>
+      <button   className="w-full py-2 rounded-lg text-white font-semibold 
+  bg-gradient-to-r from-pink-500 to-purple-500 
+  hover:from-purple-500 hover:to-pink-500 
+  transition duration-300 shadow-lg hover:shadow-pink-500/50" onClick={handleSubmit}>
         Register
       </button>
     </div>
