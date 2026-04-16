@@ -18,17 +18,13 @@ function Leaderboard() {
   }, []);
 
   return (
-    <div>
-      <h2>Leaderboard 🏆</h2>
+    <div className="bg-white/20 backdrop-blur-lg border border-white/30 p-6 rounded-2xl shadow-xl">
+      <h2 className="text-xl font-bold text-white mb-3">Leaderboard 🏆</h2>
 
       {data.map((item, index) => (
         <div
           key={item._id}
-          style={{
-            border: "1px solid black",
-            margin: "10px",
-            padding: "10px",
-          }}
+          className="bg-white/10 p-4 rounded-lg mb-3"
         >
           <h3>
             #{index + 1} - {item.user?.name}

@@ -21,13 +21,13 @@ function QuizList() {
   }
 
   return (
-    <div>
-      <h2>Available Quizzes 📋</h2>
+    <div className="bg-white/20 backdrop-blur-lg border border-white/30 p-6 rounded-2xl shadow-xl">
+      <h2 className="text-xl font-bold text-white mb-3">Available Quizzes 📋</h2>
 
       {quizzes.map((quiz) => (
-        <div key={quiz._id}>
-          <h3>{quiz.title}</h3>
-          <button onClick={() => setSelectedQuizId(quiz._id)}>
+        <div key={quiz._id} className="bg-white/10 p-4 rounded-lg mb-3">
+          <h3 className="text-lg font-semibold text-white">{quiz.title}</h3>
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" onClick={() => setSelectedQuizId(quiz._id)}>
             Attempt Quiz
           </button>
         </div>
